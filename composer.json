@@ -1,0 +1,50 @@
+{
+    "name": "invoicepress/vampire-zugferd",
+    "description": "Validate e-invoices made or read with horstoeko/zugferd against the official EN 16931, XRechnung, Factur-X / ZUGFeRD and Peppol rule sets in pure PHP with VAMPIRE PHP. A drop-in replacement for ZugferdKositValidator that needs no Java.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "en16931",
+        "e-invoicing",
+        "xrechnung",
+        "zugferd",
+        "factur-x",
+        "peppol",
+        "validator",
+        "horstoeko",
+        "kosit",
+        "vampire"
+    ],
+    "homepage": "https://vampire.invoicepress.de",
+    "authors": [
+        {
+            "name": "Ralf Fuhrmann",
+            "homepage": "https://invoicepress.de"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "invoicepress/vampire-php": "^1.2",
+        "horstoeko/zugferd": "^1.0.130"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "InvoicePress\\VampireZugferd\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "InvoicePress\\VampireZugferd\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable"
+}
