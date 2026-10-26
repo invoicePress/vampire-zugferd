@@ -65,7 +65,9 @@ final class InvoiceFactory
         if ($complete) {
             $document
                 ->setDocumentBuyerReference('04011000-12345-67')
-                ->setDocumentSellerContact('Max Mustermann (TEST)', 'Accounts', '+49 89 0000000', null, 'invoice@example.com')
+                // ⚠️ Name OR department, never both: both are BT-41, and CII-SR-465 ( an error in the XRechnung scenario
+                // since VAMPIRE PHP 1.3.0, as in the KoSIT configuration ) rejects a contact that carries the two.
+                ->setDocumentSellerContact('Max Mustermann (TEST)', null, '+49 89 0000000', null, 'invoice@example.com')
                 ->setDocumentSellerCommunication('EM', 'invoice@example.com')
                 ->setDocumentBuyerCommunication('EM', 'buyer@example.com')
                 ->addDocumentPaymentMeanToCreditTransfer('DE02120300000000202051', 'Example Supplier GmbH (TEST)');
